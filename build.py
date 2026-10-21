@@ -13,6 +13,7 @@ ROOT = Path(__file__).parent
 SRC = ROOT / "src"
 
 FONTS = ("https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800"
+         "&family=Cinzel:wght@600;700;900"
          "&family=Nunito:wght@400;600;700;800&family=DM+Mono:wght@500"
          "&family=Noto+Sans+Symbols+2&display=swap")
 
