@@ -929,7 +929,9 @@ button { font: inherit; color: inherit; }
     for (var i = 0; i < moves.length; i++) {
       var ns = E.makeMove(s, moves[i]);
       var lower = best === -Infinity ? -1e9 : best - margin;
-      var sc = depth <= 1 ? -quiesce(ns, -1e9, -lower, 6) : -negamax(ns, depth - 1, -1e9, -lower, 1);
+      var sc;
+      if (depth <= 1) sc = E.legalMoves(ns).length ? -quiesce(ns, -1e9, -lower, 6) : (E.inCheck(ns) ? MATE : 0);
+      else sc = -negamax(ns, depth - 1, -1e9, -lower, 1);
       if (aborted) break;
       out.push({ move: moves[i], score: sc });
       if (sc > best) best = sc;
