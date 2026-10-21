@@ -48,7 +48,7 @@
   function confetti(amount) {
     if (reduceMotion || !confettiCanvas) return;
     var c = confettiCanvas, ctx = c.getContext('2d'), W = c.width = innerWidth, H = c.height = innerHeight;
-    var colors = ['#FF6A2B', '#FFD45E', '#159F68', '#8C9BDC', '#FF8FB1'], parts = [];
+    var colors = ['#E8B339', '#B8860B', '#1F6F4A', '#8E6FD1', '#F4E7C9'], parts = [];
     for (var i = 0; i < (amount || 140); i++) parts.push({ x: W / 2 + (Math.random() - 0.5) * W * 0.3, y: H * 0.35, vx: (Math.random() - 0.5) * 14, vy: -Math.random() * 14 - 4, s: 5 + Math.random() * 6, r: Math.random() * 6, c: colors[i % colors.length] });
     var start = performance.now();
     c.hidden = false;
